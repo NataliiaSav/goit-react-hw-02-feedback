@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import css from './Feedback.module.css'
 
 export class Feedback extends Component {
@@ -6,13 +7,21 @@ export class Feedback extends Component {
         const { options } = this.props;
 
         return (
+            <>
+            <h2 className = {css.title}>Please leave feedback</h2>
             <div className = {css.buttons}>
                     {options.map(option =>{
                         return (
-                            <button className = {css.btn} key = {option} type = 'button' onClick={() => props.onLeaveFeedback(option)}>{option}</button>
+                            <button className = {css.btn} key = {option} type = 'button' onClick={() => this.props.onLeaveFeedback(option)}>{option}</button>
                         )
                     })}
-            </div>
+                </div>
+                </>
         )
     }
 }
+
+Feedback.propTypes = {
+    options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    onLeaveFeedback: PropTypes.func.isRequired,
+  };
