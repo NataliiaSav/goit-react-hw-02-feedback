@@ -1,0 +1,10 @@
+.title{
+    font-size: 20px;
+    font-weight: 600;
+}
+.buttons {
+    display: flex;
+}
+.btn{
+    width: 200px;
+}
