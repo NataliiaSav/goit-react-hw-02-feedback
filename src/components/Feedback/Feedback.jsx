@@ -8,7 +8,6 @@ export class Feedback extends Component {
 
         return (
             <>
-            <h2 className = {css.title}>Please leave feedback</h2>
             <div className = {css.buttons}>
                     {options.map(option =>{
                         return (
